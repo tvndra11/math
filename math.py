@@ -15,6 +15,10 @@ def question(qno):
     if qno == 1:
         num1 = random.randint(0,9999)
         num2 = random.randint(0,9999)
+        if num1 > num2:
+            num1, num2 = num1, num2
+        else:
+            num1, num2 = num2, num1
         result = num1 - num2
         answer = input(str(num1)+'-'+str(num2)+': ')
         if answer == result:
@@ -22,8 +26,8 @@ def question(qno):
         else:
             return(0)
     if qno == 2:
-        num1 = random.randint(0,9999)
-        num2 = random.randint(0,9999)
+        num1 = random.randint(0,99)
+        num2 = random.randint(0,99)
         result = num1 * num2
         answer = input(str(num1)+'*'+str(num2)+': ')
         if answer == result:
@@ -31,8 +35,8 @@ def question(qno):
         else:
             return(0)
     if qno == 3:
-        num1 = random.randint(0,9999)
-        num2 = random.randint(0,9999)
+        num1 = random.randint(0,999)
+        num2 = random.randint(0,99)
         result = num1 / num2
         answer = input(str(num1)+'/'+str(num2)+': ')
         if answer == result:
@@ -40,18 +44,9 @@ def question(qno):
         else:
             return(0)
     if qno == 4:
-        num1 = random.randint(0,9999)
+        num1 = random.randint(0,20)
         result = num1 * num1
         answer = input(str(num1)+'^2: ')
-        if answer == result:
-            return(1)
-        else:
-            return(0)
-    if qno == 5:
-        num1 = random.randint(0,9999)
-        num2 = random.randint(0,9999)
-        result = math.sqrt(num1)
-        answer = input(str(num1)+'sqrt: ')
         if answer == result:
             return(1)
         else:
@@ -70,5 +65,5 @@ time.sleep(1)
 print('go')
 time1 = time.time()
 while score <= 10:
-    score = score + question(random.randint(0,5))
+    score = score + question(random.randint(0,4))
     
